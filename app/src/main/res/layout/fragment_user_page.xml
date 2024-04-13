@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.UserPageFragment"
+    android:padding="20dp"
+    android:background="@drawable/blue_app_background"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello user"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/userTextView"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_weight=".8"
+            android:text="Press to add your own recipe"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/addRecipeButton"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/plus"
+            android:layout_weight=".2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="15dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_weight=".8"
+            android:text="Press to search recipes online by ingredients"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchByIngredientsButton"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/plus"
+            android:layout_marginLeft="5dp"
+            android:layout_weight=".2"
+            android:layout_marginBottom="15dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Here are your recipes"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:cardCornerRadius="20dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recipesRecyclerView"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

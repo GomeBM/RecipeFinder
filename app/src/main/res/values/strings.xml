@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">RecipeFinder</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apiKey">1709a949454d41a79a2efc87434a6193</string>
+    <string name="DairySpinnerPrompt">Dairy</string>
+    <string name="CarbsSpinnerPrompt">Carbs</string>
+    <string name="VegetablesSpinnerPrompt">Vegetables</string>
+    <string name="MeatSpinnerPrompt">Meat</string>
+    <string-array name="Dairy">
+        <item>DAIRY</item>
+        <item>milk</item>
+        <item>cheese</item>
+        <item>butter</item>
+        <item>sour cream</item>
+        <item>whipping cream</item>
+    </string-array>
+    <string-array name="Carbohydrates">
+        <item>CARBS</item>
+        <item>potatoes</item>
+        <item>sweet potatoes</item>
+        <item>rice</item>
+        <item>bread</item>
+        <item>bread crumbs</item>
+        <item>pasta</item>
+    </string-array>
+    <string-array name="Vegetables">
+        <item>VEGETABLES</item>
+        <item>cucumber</item>
+        <item>pepper</item>
+        <item>tomatoes</item>
+        <item>cauliflower</item>
+        <item>zucchini</item>
+        <item>mushrooms</item>
+        <item>onion</item>
+        <item>garlic</item>
+        <item>lettuce</item>
+        <item>cabbage</item>
+        <item>eggplant</item>
+    </string-array>
+    <string-array name="Meat">
+        <item>MEAT</item>
+        <item>chicken breast</item>
+        <item>steaks</item>
+        <item>chicken wings</item>
+        <item>fillet</item>
+        <item>fish</item>
+    </string-array>
+    <string-array name="Fruits">
+        <item>FRUITS</item>
+        <item>watermelon</item>
+        <item>grapes</item>
+        <item>apples</item>
+        <item>strawberry</item>
+        <item>grapefruit</item>
+        <item>blueberries</item>
+        <item>grapefruit</item>
+    </string-array>
+    <string-array name="Sugars">
+        <item>SUGARS</item>
+        <item>chocolate</item>
+        <item>sugar</item>
+        <item>honey</item>
+    </string-array>
+
+</resources>

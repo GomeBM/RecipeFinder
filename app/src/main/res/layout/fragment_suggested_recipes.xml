@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.SuggestedRecipesFragment"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/blue_app_background">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8"
+        android:id="@+id/recipesRecyclerView"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/returnButton"
+        android:text="Return"
+        android:textAllCaps="false"
+        android:background="@drawable/blue_button_background"/>
+
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp"
+    android:background="@drawable/blue_app_background"
+    tools:context=".Fragments.ChooseIngredientsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Ingredients"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/userTextView"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dairySpinner"
+                    android:entries="@array/Dairy"
+                    android:layout_weight="1"
+                    android:prompt="@string/DairySpinnerPrompt"/>
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/carbsSpinner"
+                    android:entries="@array/Carbohydrates"
+                    android:layout_weight="1"
+                    android:prompt="@string/CarbsSpinnerPrompt"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/meatSpinner"
+                    android:entries="@array/Meat"
+                    android:layout_weight="1"
+                    android:prompt="@string/MeatSpinnerPrompt"/>
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fruitsSpinner"
+                    android:entries="@array/Fruits"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vegetablesSpinner"
+                    android:entries="@array/Vegetables"
+                    android:layout_weight="1"
+                    android:prompt="@string/VegetablesSpinnerPrompt"/>
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sugarsSpinner"
+                    android:entries="@array/Sugars"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Ingredients:"
+                android:textSize="20sp"
+                android:layout_marginVertical="10dp"
+                android:gravity="center"
+                android:id="@+id/listHeader"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/userIngredientsRecyclerView"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show user chose list"
+        android:textSize="20sp"
+        android:id="@+id/getRecipesButton"
+        android:background="@drawable/blue_button_background"/>
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.recipefinder.Fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_userPageFragment"
+            app:destination="@id/userPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.recipefinder.Fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPageFragment"
+        android:name="com.example.recipefinder.Fragments.UserPageFragment"
+        android:label="fragment_user_page"
+        tools:layout="@layout/fragment_user_page" >
+        <action
+            android:id="@+id/action_userPageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_userPageFragment_to_chooseIngredientsFragment"
+            app:destination="@id/chooseIngredientsFragment" />
+        <action
+            android:id="@+id/action_userPageFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseIngredientsFragment"
+        android:name="com.example.recipefinder.Fragments.ChooseIngredientsFragment"
+        android:label="fragment_choose_ingredients"
+        tools:layout="@layout/fragment_choose_ingredients" >
+        <action
+            android:id="@+id/action_chooseIngredientsFragment_to_suggestedRecipesFragment"
+            app:destination="@id/suggestedRecipesFragment" />
+        <action
+            android:id="@+id/action_chooseIngredientsFragment_to_userPageFragment"
+            app:destination="@id/userPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/suggestedRecipesFragment"
+        android:name="com.example.recipefinder.Fragments.SuggestedRecipesFragment"
+        android:label="fragment_suggested_recipes"
+        tools:layout="@layout/fragment_suggested_recipes" >
+        <action
+            android:id="@+id/action_suggestedRecipesFragment_to_chooseIngredientsFragment"
+            app:destination="@id/chooseIngredientsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRecipeFragment"
+        android:name="com.example.recipefinder.Fragments.AddRecipeFragment"
+        android:label="fragment_add_recipe"
+        tools:layout="@layout/fragment_add_recipe" >
+        <action
+            android:id="@+id/action_addRecipeFragment_to_userPageFragment"
+            app:destination="@id/userPageFragment" />
+    </fragment>
+</navigation>
