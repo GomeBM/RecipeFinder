@@ -19,7 +19,11 @@
             app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_loginFragment_to_userPageFragment"
-            app:destination="@id/userPageFragment" />
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -41,13 +45,26 @@
         tools:layout="@layout/fragment_user_page" >
         <action
             android:id="@+id/action_userPageFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_userPageFragment_to_chooseIngredientsFragment"
-            app:destination="@id/chooseIngredientsFragment" />
+            app:destination="@id/chooseIngredientsFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_userPageFragment_to_addRecipeFragment"
-            app:destination="@id/addRecipeFragment" />
+            app:destination="@id/addRecipeFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/chooseIngredientsFragment"
@@ -56,10 +73,22 @@
         tools:layout="@layout/fragment_choose_ingredients" >
         <action
             android:id="@+id/action_chooseIngredientsFragment_to_suggestedRecipesFragment"
-            app:destination="@id/suggestedRecipesFragment" />
+            app:destination="@id/suggestedRecipesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/userPageFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_chooseIngredientsFragment_to_userPageFragment"
-            app:destination="@id/userPageFragment" />
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/userPageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/suggestedRecipesFragment"
@@ -67,8 +96,14 @@
         android:label="fragment_suggested_recipes"
         tools:layout="@layout/fragment_suggested_recipes" >
         <action
-            android:id="@+id/action_suggestedRecipesFragment_to_chooseIngredientsFragment"
-            app:destination="@id/chooseIngredientsFragment" />
+            android:id="@+id/action_suggestedRecipesFragment_to_userPageFragment"
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/userPageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/addRecipeFragment"
@@ -77,6 +112,10 @@
         tools:layout="@layout/fragment_add_recipe" >
         <action
             android:id="@+id/action_addRecipeFragment_to_userPageFragment"
-            app:destination="@id/userPageFragment" />
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
 </navigation>

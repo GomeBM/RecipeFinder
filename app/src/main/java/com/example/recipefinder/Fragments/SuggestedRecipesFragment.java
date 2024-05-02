@@ -137,7 +137,7 @@ public class SuggestedRecipesFragment extends Fragment {
                 keyBundle.putString("userPhone", userPhone);
                 keyBundle.putString("userEmail", userEmail);
                 keyBundle.putString("userPassword", userPassword);
-                Navigation.findNavController(view).navigate(R.id.action_suggestedRecipesFragment_to_chooseIngredientsFragment,keyBundle);
+                Navigation.findNavController(view).navigate(R.id.action_suggestedRecipesFragment_to_userPageFragment,keyBundle);
             }
         });
 
@@ -159,7 +159,7 @@ public class SuggestedRecipesFragment extends Fragment {
         return view;
     }
 
-    // Inner class implementing RecipeInteractionListener
+    //Inner class implementing RecipeInteractionListener
     private class RecipeInteractionListenerImpl implements RecipeInteractionListener {
         @Override
         public void checkIfRecipeLiked(Recipe recipe, OnCheckRecipeLikedListener listener) {

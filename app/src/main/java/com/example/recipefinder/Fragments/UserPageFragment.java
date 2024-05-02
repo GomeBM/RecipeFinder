@@ -68,12 +68,6 @@ public class UserPageFragment extends Fragment {
     ProgressDialog progressDialog;
     RetrofitRequestManager retrofitRequestManager;
 
-
-    TextView recipeTitle;
-    TextView availableIngredients;
-    TextView ingredientsMissing;
-    TextView recipeInstructions;
-
     FloatingActionButton addRecipeButton;
     FloatingActionButton searchByIngredientsButton;
     private List<Recipe> userRecipeList;
@@ -135,7 +129,6 @@ public class UserPageFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         String userUID = firebaseUser.getUid();
-        //here compare userRecipeList to recipeListRef
 
 
         String userPhone = getArguments().getString("userPhone");
@@ -147,8 +140,6 @@ public class UserPageFragment extends Fragment {
         bundle.putString("userEmail", userEmail);
         bundle.putString("userPassword", userPassword);
 
-
-        //HERE PUT ALL ADAPTER AND RECYCLERVIEW SHIT
         adapter = new RandomRecipeAdapter(userRecipeList,requireContext());
         recipesRecyclerView.setAdapter(adapter);
         recipesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -243,14 +234,10 @@ public class UserPageFragment extends Fragment {
                 // Remove the swiped recipe from the list
                 userRecipeList.remove(position);
                 adapter.notifyItemRemoved(position);
-
-                // You can implement any additional logic here, such as showing a confirmation dialog
-                // or deleting the recipe from the database
-                // For example:
-                mListener.removeRecipeFromUserList(deletedRecipe);
+                //mListener.removeRecipeFromUserList(deletedRecipe);
             }
         };
-        // Attach ItemTouchHelper to RecyclerView
+        //Attach ItemTouchHelper to RecyclerView
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(recipesRecyclerView);
 
 

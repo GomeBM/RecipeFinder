@@ -119,25 +119,12 @@ public class Recipe {
         return stringBuilder.toString();
     }
 
-//    public void loadImageIntoImageView(ImageView imageView) {
-//        if (image != null && !image.isEmpty()) {
-//            if (imageDrawable != null) {
-//                imageView.setImageDrawable(imageDrawable);
-//            } else {
-//                // Load the image from the URL using Picasso or Glide
-//                Picasso.get().load(image).into(imageView);
-//            }
-//        } else {
-//            imageView.setImageResource(R.drawable.no_image_found);
-//        }
-//    }
-
     public void loadImageIntoImageView(Context context, ImageView imageView) {
         if (image != null && !image.isEmpty()) {
             if (image.startsWith("http")) {
                 // If the image is a URL, load it using Picasso
                 Picasso.get().load(image).into(imageView);
-            } else {
+            } else { // Not a url, i.e. user added photo which is stored as a bitstring
                 try {
                     // Attempt to decode the image string
                     byte[] decodedBytes = Base64.decode(image, Base64.DEFAULT);

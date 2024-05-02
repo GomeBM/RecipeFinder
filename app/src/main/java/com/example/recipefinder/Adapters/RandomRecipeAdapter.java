@@ -133,7 +133,9 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeAdapte
             public void onClick(View v) {
                 // Construct the email content
                 List<Ingredient> newIngredientList = recipe.getUsedIngredients();
-                newIngredientList.addAll(recipe.getMissedIngredients());
+                if(recipe.getMissedIngredients()!=null){
+                    newIngredientList.addAll(recipe.getMissedIngredients());
+                }
                 String subject = "New recipe from RecipeFinder!";
                 String body = "Recipe Name:\n" + recipe.getTitle() + "\n\n" +
                         "Ingredients : \n" + recipe.getUsedIngredientsString(recipe.getUsedIngredients()) + "\n\n" +
@@ -145,7 +147,7 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeAdapte
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
                 emailIntent.putExtra(Intent.EXTRA_TEXT, body);
 
-                // Start the activity
+                //Start the activity
                 context.startActivity(Intent.createChooser(emailIntent, "Send Email"));
             }
 

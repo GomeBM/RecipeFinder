@@ -36,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+
+    }
+
+    public void removeActionBar(){
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
     }
 
     //Function for registering a new user using firebase's email and password authentication.

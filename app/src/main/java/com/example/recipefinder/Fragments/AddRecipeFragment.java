@@ -173,18 +173,20 @@ public class AddRecipeFragment extends Fragment {
                 didCreate = createUserRecipe(userRecipe, String.valueOf(addRecipeName.getText()), userRecipe.getImage(), userChosenIgredientsList, userRecipe.getInstructions());
                 // After creating, logging, and saving user recipe list, add recipe to user recipe list
                 if (didCreate) {
-                    // Here retrieve the list and add the recipe
+                    //Here retrieve the list and add the recipe
                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
                     String userUID = firebaseUser.getUid();
-                    // Get reference to the user's recipe list in the database
+                    //Get reference to the user's recipe list in the database
                     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users").child(userUID);
                     myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
+                                //fetch user based on the myRef variable
                                 User user = dataSnapshot.getValue(User.class);
                                 if (user != null) {
                                     MainActivity mainActivity = ( MainActivity) getActivity();
+                                    //in case this is the first recipe for the user, create his recipe list and add the recipe, otherwise add to his existing one
                                     List<Recipe> recipeList=new ArrayList<>();
                                     if(user.getRecipeList()!=null){
                                         recipeList = user.getRecipeList();
@@ -192,7 +194,6 @@ public class AddRecipeFragment extends Fragment {
                                     recipeList.add(userRecipe);
                                     mainActivity.writeDataToDataBase(userEmail,userPassword,userPhone,recipeList);
                                     Toast.makeText(requireContext(), "Recipe saved successfully", Toast.LENGTH_SHORT).show();
-                                    // Navigate back or perform any other action
                                     Bundle bundle = new Bundle();
                                     bundle.putString("userPhone", userPhone);
                                     bundle.putString("userEmail", userEmail);
@@ -200,7 +201,7 @@ public class AddRecipeFragment extends Fragment {
                                     didCreate=false;
                                     Navigation.findNavController(view).navigate(R.id.action_addRecipeFragment_to_userPageFragment, bundle);
                                 } else {
-                                    Log.d("readDataFromDataBase", "No recipe list data found.");
+                                    Log.d("readDataFromDataBase", "No user data found.");
                                 }
                             }
                         }
@@ -208,7 +209,7 @@ public class AddRecipeFragment extends Fragment {
                         @Override
                         public void onCancelled(DatabaseError error) {
                             // Failed to read value
-                            Toast.makeText(getContext(), "Failed to retrieve shopping list data", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Failed to retrieve data", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -218,13 +219,13 @@ public class AddRecipeFragment extends Fragment {
     }
 
     private void capturePhoto() {
-        // Create a camera intent to capture the image
+        //Create a camera intent to capture the image
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Check if there's a camera app available to handle the intent
+        //Check if there's a camera app available to handle the intent
         if (takePictureIntent.resolveActivity(requireContext().getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
         } else {
-            // Handle the case where no camera app is available
+            //Handle the case where no camera app is available
             Toast.makeText(requireContext(), "No camera app available", Toast.LENGTH_SHORT).show();
         }
     }
@@ -233,25 +234,24 @@ public class AddRecipeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
-            // The image was successfully captured, set the thumbnail to the Recipe's image
+            //The image was successfully captured, set the thumbnail to the Recipe's image
             Bundle extras = data.getExtras();
             Bitmap thumbnail = (Bitmap) extras.get("data");
-            // Convert Bitmap to Base64 string
+            //Convert Bitmap to Base64 string
             String thumbnailBase64 = bitmapToBase64(thumbnail);
-            // Set the Base64 string to the Recipe's image
+            //Set the Base64 string to the Recipe's image
             userRecipe.setImage(thumbnailBase64);
             Toast.makeText(requireContext(), "Photo added successfully", Toast.LENGTH_SHORT).show();
         }
     }
 
-    // Convert Bitmap to Base64 string
+    //Convert Bitmap to Base64 string
     private String bitmapToBase64(Bitmap bitmap) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] byteArray = baos.toByteArray();
         return Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
-
 
     private void attachListenersToSpinners(List<Spinner> spinnerList) {
         for (Spinner spinner : spinnerList) {

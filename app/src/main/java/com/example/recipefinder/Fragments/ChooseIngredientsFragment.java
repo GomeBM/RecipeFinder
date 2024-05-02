@@ -121,10 +121,8 @@ public class ChooseIngredientsFragment extends Fragment {
         getRecipesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //HERE CREATE A BUNDLE WITH AND PUT INSIDE OF IT THE RECIPE RECIEVED FROM THE 2API CALLS, THEN SEND THE BUNDLE WITH THE NAVIGATION
                 String userIngredientStringify=convertIngredientsListToString(userChosenIgredientsList);
                 performRecipeSearch(userChosenIgredientsList,userIngredientStringify);
-                //Navigation.findNavController(view).navigate(R.id.action_chooseIngredientsFragment_to_userPageFragment);
             }
         });
 
@@ -186,25 +184,6 @@ public class ChooseIngredientsFragment extends Fragment {
         });
     }
 
-//    private void fetchRecipeInstructions(Recipe recipeFromPreviousCall, List<Recipe> returnedRecipes) {
-//        retrofitRequestManager.getRecipeInstructions(recipeFromPreviousCall.getId(), new RetrofitRequestManager.RecipeInstructionsCallback() {
-//            @Override
-//            public void onSuccess(String instructions) {
-//                recipeFromPreviousCall.setInstructions(instructions);
-//                returnedRecipes.add(recipeFromPreviousCall);
-//                fetchedCount++;
-//                if (fetchedCount == totalRecipes) {
-//                    onAllFetched(returnedRecipes);
-//                }
-//            }
-//            @Override
-//            public void onFailure(String errorMessage) {
-//                Toast.makeText(requireContext(),"Failed to fetch recipe  "+recipeFromPreviousCall.getTitle(), Toast.LENGTH_SHORT).show();
-//                Log.d("TAG","Failed to fetch recipe instructions for "+recipeFromPreviousCall.getTitle());
-//            }
-//        });
-//    }
-
     private void fetchRecipeInstructions(Recipe recipeFromPreviousCall, List<Recipe> returnedRecipes) {
         retrofitRequestManager.getRecipeInstructions(recipeFromPreviousCall.getId(), new RetrofitRequestManager.RecipeInstructionsCallback() {
             @Override
@@ -242,8 +221,6 @@ public class ChooseIngredientsFragment extends Fragment {
     }
 
     private void onAllFetched(List<Recipe> recipes) {
-        // All recipes have been fetched successfully
-        // You can now pass the list of recipes to the next fragment
         Gson gson = new Gson();
         String recipesJson = gson.toJson(recipes);
 

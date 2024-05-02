@@ -15,10 +15,13 @@
         android:id="@+id/recipesRecyclerView"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/returnButton"
         android:text="Return"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:background="@drawable/blue_button_background"/>
 

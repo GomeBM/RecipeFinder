@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#D2BDF6</color>
     <color name="blue">#77C0ED</color>
+    <color name="greenTextColor">#DDF3B0</color>
+    <color name="blueTextColor">#ABC6FB</color>
+    <color name="greenCardBackgroundColor">#C3E678</color>
+    <color name="blueCardBackgroundColor">#8AC5F8</color>
 </resources>

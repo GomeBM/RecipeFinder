@@ -7,7 +7,7 @@
     app:cardUseCompatPadding="true"
     app:contentPadding="8dp"
     app:cardCornerRadius="5dp"
-    app:cardBackgroundColor="@color/blue">
+    app:cardBackgroundColor="@color/blueCardBackgroundColor">
 
     <LinearLayout
         android:layout_width="match_parent"

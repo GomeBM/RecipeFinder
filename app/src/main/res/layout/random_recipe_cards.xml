@@ -9,7 +9,7 @@
     app:contentPadding="10dp"
     android:layout_margin="8dp"
     android:id="@+id/randomListContainer"
-    android:backgroundTint="@color/blue"
+    android:backgroundTint="@color/blueCardBackgroundColor"
     >
 
     <LinearLayout
@@ -24,10 +24,10 @@
             android:layout_height="wrap_content"
             android:text="Dish Name"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp"
             android:padding="8dp"
-            android:background="@color/white"
+
             android:scrollHorizontally="true"/>
 
         <ImageView
@@ -35,8 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:scaleType="centerCrop"
-            android:layout_margin="8dp"
-            android:background="@color/white"/>
+            android:layout_margin="8dp" />
 
         <TextView
             android:id="@+id/randomRecipeMissingIngredients"
@@ -44,10 +43,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Missing ingredients:"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:padding="8dp"
-            android:background="@color/white"
             android:scrollHorizontally="true"
             android:layout_marginBottom="8dp"/>
     </LinearLayout>
